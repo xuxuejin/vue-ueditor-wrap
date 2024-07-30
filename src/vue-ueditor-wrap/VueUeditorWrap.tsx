@@ -221,10 +221,10 @@ export default defineComponent({
           editor.setContent(props.modelValue);
         } else {
           status = STATUS_MAP.READY;
-          emit('ready', editor);
           if (props.modelValue) {
             editor.setContent(props.modelValue);
           }
+          emit('ready', editor);
         }
         if (props.mode === 'observer' && window.MutationObserver) {
           observerChangeListener();
